@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Bcycle Stations Map</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,700,300italic,900">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow">
+
+	<style>
+		
+		.locationName {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 700;
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div id = "map" style = "height: 1000px; width: 1000px; position: relative;"></div>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script>
+
+		var map = L.map('map').setView([30.27456, -97.74047], 15);
+
+
+		var bcycleIcon = L.icon({
+			iconUrl: 'marker-active.png',
+			iconSize: [32, 45],
+			iconAnchor: [16, 45],
+			popupAnchor: [0, -40]
+		});
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			attribution: 'Made by Adam Humphrey',
+			maxZoom: 18
+		}).addTo(map);
+
+		// Adding markers to map with bCycle logo markers and information popups
+		var SecondAndCongress = L.marker([30.26408, -97.74355], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>2nd & Congress</p>151 E. 2nd St., Austin, TX 78701<br>Total docks: 13");
+		var FourthAndCongress = L.marker([30.26634, -97.74378], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>4th & Congress</p>120 W. 4th St., Austin, TX 78701<br>Total docks: 13");
+		var EighthAndCongress = L.marker([30.26980, -97.74186], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>8th & Congress</p>111 E. 8th St., Austin, TX 78701<br>Total docks: 13");
+		var EleventhAndCongress = L.marker([30.27260, -97.74127], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>State Capitol - 11th & Congress</p>1090 Congress Ave., Austin, TX 78701<br>Total docks: 18");
+		var ConventionCenter = L.marker([30.26483, -97.73900], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Convention Center - 4th @ MetroRail</p>499 E. 4th St., Austin, TX 78701<br>Total docks: 17");
+		var SecondAndLavaca = L.marker([30.26476, -97.74678], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>City Hall - Lavaca & 2nd</p>400 W. 2nd St., Austin, TX 78701<br>Total docks: 19");
+		var FifthAndBowie = L.marker([30.26960, -97.75332], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Fifth & Bowie</p>Intersection of 5th St. & Bowie St., Austin, TX 78703<br>Total docks: 13");
+		var BartonSpringsAndRiverside = L.marker([30.25870, -97.74872], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Barton Springs & Riverside</p>400 Barton Springs Rd., Austin, TX 78704<br>Total docks: 11");
+		var SouthCongressAndAcademy = L.marker([30.25226, -97.74854], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>South Congress & Academy</p>1199 S. Congress Ave., Austin, TX 78704<br>Total docks: 13");
+		var SouthCongressAndJames = L.marker([30.25103, -97.74926], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>South Congress & James</p>Intersection of W. James St. & South Congress Ave., Austin, TX 78704<br>Total docks: 9");
+		var SouthCongressAndElizabeth = L.marker([30.24891, -97.75019], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>South Congress & Elizabeth</p>101 W. Elizabeth St., Austin, TX 78704<br>Total docks: 13");
+		var WallerAndSixth = L.marker([30.26461, -97.73049], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 6th & Waller</p>602 Waller St., Austin, TX 78702<br>Total docks: 13");
+		var WestAndSixth = L.marker([30.27041, -97.75046], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>West & 6th</p>603 West Ave., Austin, TX 78701<br>Total docks: 13");
+		var CongressAndMLK = L.marker([30.28039, -97.73809], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Bullock Museum</p>1881 Congress Ave., Austin, TX 78701<br>Total docks: 13");
+		var ThirdAndTrinity = L.marker([30.26426, -97.74023], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Convention Center - 3rd & Trinity</p>212 Trinity St., Austin, TX 78701<br>Total docks: 11");
+		var SeventeenthAndGuadalupe = L.marker([30.27974, -97.74254], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>17th & Guadalupe</p>411 W. 17th St., Austin, TX 78701<br>Total docks: 13");
+		var FourteenthAndColorado = L.marker([30.27654, -97.74155], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>State Capitol - 14th & Colorado</p>206 W. 14th St., Austin, TX 78704<br>Total docks: 11");
+		var PlazaSaltillo = L.marker([30.26217, -97.72743], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Plaza Saltillo</p>1501 E. 5th St., Austin, TX 78704<br>Total docks: 12");
+		var ThirdAndNueces = L.marker([30.26694, -97.74939], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>3rd & Nueces</p>311 Nueces St., Austin, TX 78701<br>Total docks: 13");
+		var SixthAndPedernales = L.marker([30.25895, -97.71475], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 6th & Pedernales</p>2498 E. 6th St., Austin, TX 78702<br>Total docks: 12");
+		var RioGrandeAndTwelfth = L.marker([30.27595, -97.74739], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>ACC - 12th & Rio Grande</p>700 W. 12th St., Austin, TX 78701<br>Total docks: 11");
+		var WestAndTwelfth = L.marker([30.27647, -97.74825], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>ACC - 12th & West</p>1231 West Ave., Austin, TX 78701<br>Total docks: 11");
+		var GuadalupeAndTwentyFirst = L.marker([30.28395, -97.74198], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>21st & Guadalupe</p>2100 Guadalupe St., Austin, TX 78752<br>Total docks: 13");
+		var WestMall = L.marker([30.28576, -97.74181], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>University of Texas West Mall</p>2242 Guadalupe St., Austin, TX 78705<br>Total docks: 13");
+		var LongCenter = L.marker([30.25941, -97.74971], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>The Long Center</p>Intersection of South 1st & Riverside, Austin, TX 78704<br>Total docks: 13");
+		var RepublicSquare = L.marker([30.26774, -97.74692], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Republic Square</p>Intersection of 4th St. & Guadalupe St., Austin, TX 78701<br>Total docks: 13");
+		var ThirdAndWest = L.marker([30.26780, -97.75189], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>3rd & West</p>652 W. 3rd St., Austin, TX 78703<br>Total docks: 9");
+		var SanJacintoAndTwelfth = L.marker([30.27336, -97.73805], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>12th & San Jacinto</p>1201 San Jacinto Blvd., Austin, TX 78701<br>Total docks: 12");
+		var SanJacintoAndEighth = L.marker([30.26912, -97.73986], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>8th & San Jacinto</p>782 San Jacinto Blvd., Austin, TX 78701<br>Total docks: 13");
+		var DavisAndRainey = L.marker([30.26019, -97.73845], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Davis & Rainey</p>698 Davis St., Austin, TX 78701<br>Total docks: 16");
+		var FifthAndSanMarcos = L.marker([30.26416, -97.73289], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>5th & San Marcos</p>991 E. 5th St., Austin, TX 78702<br>Total docks: 9");
+		var TrinityAndSixth = L.marker([30.26735, -97.73933], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>6th & Trinity</p>606 Trinity St., Austin, TX 78705<br>Total docks: 11");
+		var PflugerBridge = L.marker([30.26717, -97.75484], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Pfluger Bridge</p>W. 2nd St., Austin, TX 78703<br>Total docks: 17");
+		var PalmerAuditorium = L.marker([30.25971, -97.75346], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Palmer Auditorium</p>900 Barton Springs Rd., Austin, TX 78704<br>Total docks: 13");
+		var VictoryGrill = L.marker([30.26896, -97.72843], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Victory Grill</p>1106 E. 11th St., Austin, TX 78702<br>Total docks: 12");
+		var EleventhAndSanMarcos = L.marker([30.26968, -97.73074], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 11th & San Marcos</p>1001 E. 11th St., Austin, TX 78702<br>Total docks: 13");
+		var RedRiverAndEighth = L.marker([30.26854, -97.73646], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>8th & Red River</p>761 Red River St., Austin, TX 78701<br>Total docks: 13");
+		var BartonSpringsPool = L.marker([30.26452, -97.77120], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Barton Springs Pool</p>2200 William Barton Dr., Austin, TX 78746<br>Total docks: 13");
+		var BartonSpringsAndWilliamBarton = L.marker([30.26590, -97.76822], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Zilker Park</p>2171 Barton Springs Rd., Austin, TX 78746<br>Total docks: 13");
+		var RiverSideAndLamar = L.marker([30.26446, -97.75665], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Riverside & South Lamar</p>Intersection of W. Riverside Dr. & S. Lamar Blvd., Austin, TX 78704<br>Total docks: 11");
+		var RaineyAndRiver = L.marker([30.25802, -97.73910], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Riverside & Rainey</p>64 Rainey St., Austin, TX 78701<br>Total docks: 14");
+		var RaineyAndCummings = L.marker([30.25579, -97.73982], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Cummings & Rainey/p>1 Rainey St., Austin, TX 78701<br>Total docks: 13");
+		var BartonSpringsAndKinney = L.marker([30.26200, -97.76118], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Barton Springs & Kinney</p>1530 Barton Springs Rd., Austin, TX 78704<br>Total docks: 16");
+		var ToomeyAndLamar = L.marker([30.26304, -97.75824], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Toomey & South Lamar</p>1301 Toomey Rd., Austin, TX 78704<br>Total docks: 12");
+		var SixthAndRobertMartinez = L.marker([30.26032, -97.71899], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 6th & Robert Martinez</p>2120 East 6th St., Austin, TX 78702<br>Total docks: 13");
+		var CapMetroHQ = L.marker([30.25630, -97.71007], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>Cap Metro HQ</p>2910 E. 5th St., Austin, TX 78702<br>Total docks: 13");
+		var EleventhAndSanJacinto = L.marker([30.27193, -97.73854], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>11th & San Jacinto</p>310 E. 11th St., Austin, TX 78701<br>Total docks: 12");
+		var FourthAndChicon = L.marker([30.25987, -97.72373], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 4th & Chicon</p>1819 E. 4th St., Austin, TX 78702<br>Total docks: 9");
+		var SecondAndPedernales = L.marker([30.25542, -97.71665], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>East 2nd & Pedernales</p>2414 E. 2nd St., Austin, TX 78702<br>Total docks: 10");
+		var SixthAndLavaca = L.marker([30.26889, -97.74523], {icon: bcycleIcon}).addTo(map).bindPopup("<p class=locationName>6th & Lavaca</p>601 Lavaca St., Austin, TX 78701<br>Total docks: 13");
+		
+		var popup = L.popup();
+
+	</script>
+
+</body>
+</html>
